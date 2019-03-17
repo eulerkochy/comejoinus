@@ -54,4 +54,4 @@ prev.addEventListener('click', () => {
 sliderInterval = setInterval(nextSlide, intervalTime);
 
 // Initial slide
-setTimeout(nextSlide, 4000);
+setTimeout(nextSlide, 2000);
