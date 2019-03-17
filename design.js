@@ -65,7 +65,7 @@ window.fbAsyncInit = function() {
 	  version          : 'v3.2'
 	});
 	};
-	function login() {
+login.addEventListener('click', () => {
 	FB.login(function(response) {
 		if (response.status === 'connected') {
 			document.getElementById('status').innerHTML = 'We are connected.';
@@ -85,5 +85,5 @@ window.fbAsyncInit = function() {
 	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
 		document.getElementById('status').innerHTML = response.id;
 	});
-	}
+	});
 
