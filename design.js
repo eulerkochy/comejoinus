@@ -2,7 +2,7 @@ const slides = document.querySelectorAll('.slider-container .slide');
 const eraser = document.querySelector('.eraser');
 const prev = document.getElementById('previous');
 const next = document.getElementById('next');
-const intervalTime = 7000;
+const intervalTime = 8000;
 const eraserActiveTime = 700;
 let sliderInterval;
 
@@ -54,4 +54,4 @@ prev.addEventListener('click', () => {
 sliderInterval = setInterval(nextSlide, intervalTime);
 
 // Initial slide
-setTimeout(nextSlide, 6000);
+setTimeout(nextSlide, 4000);
