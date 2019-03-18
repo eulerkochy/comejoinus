@@ -57,17 +57,23 @@ sliderInterval = setInterval(nextSlide, intervalTime);
 setTimeout(nextSlide, 100);
 
 
-window.fbAsyncInit = function() {
-	FB.init({
+login.addEventListener('click', () => {
+	window.fbAsyncInit = function() {
+	window.FB.init({
 	  appId            : '2070778906293269',
 	  autoLogAppEvents : true,
 	  xfbml            : true,
 	  version          : 'v3.2'
 	});
 	};
-
-login.addEventListener('click', () => {
-	FB.login(function(response) {
+	(function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+	$(window).FB.login(function(response) {
 		console.log(response);
 		if (response.status === 'connected') {
 			document.getElementById('status').innerHTML = 'We are connected.';
@@ -78,7 +84,7 @@ login.addEventListener('click', () => {
 			document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
 		}
 	}, {scope: 'email'});
-	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+	$(window).FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
 		document.getElementById('yname').innerHTML = '<b>' + response.first_name + '</b>';
 	});
 });
