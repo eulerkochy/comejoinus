@@ -78,7 +78,7 @@ login.addEventListener('click', () => {
 		console.log(typeof response.first_name);
 		document.getElementById('yname').innerHTML ='<b>' + ((typeof (response.first_name) !== 'undefined')?  response.first_name : 'there!') + '</b>';
 		if (typeof(response.picture) !== 'undefined')
-			document.getElementById('ypic').innerHTML = "<img src='" + response.picture.data.url + "' class='img-circle'>";
+			document.getElementById('ypic').innerHTML = "<img src='" + response.picture.data.url + "' class='img-circle'> <br>";
 	});
 	console.log(FB);
 	});
