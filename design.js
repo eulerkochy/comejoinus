@@ -66,6 +66,7 @@ login.addEventListener('click', () => {
 	  version          : 'v3.2'
 	});
 	FB.login();
+	console.log(FB);
 	};
 });
 
