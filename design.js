@@ -75,8 +75,10 @@ login.addEventListener('click', () => {
      console.log('User cancelled login or did not fully authorize.');
     }
 	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-		document.getElementById('yname').innerHTML ='<b>' + response.first_name + '</b>';
+		document.getElementById('yname').innerHTML ='<b>' + (response.first_name== undefined)? 'there!' : response.first_name + '</b>';
 	});
 	console.log(FB);
 	});
 });
+
+
