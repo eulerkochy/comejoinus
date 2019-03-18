@@ -74,9 +74,11 @@ login.addEventListener('click', () => {
     } else {
      console.log('User cancelled login or did not fully authorize.');
     }
-	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
 		console.log(typeof response.first_name);
 		document.getElementById('yname').innerHTML ='<b>' + ((typeof (response.first_name) !== 'undefined')?  response.first_name : 'there!') + '</b>';
+		if (typeof(response.picture) !== 'undefined')
+			document.getElementById('ypic').innerHTML = "<img src='" + response.picture.data.url + "'>";
 	});
 	console.log(FB);
 	});
