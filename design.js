@@ -65,8 +65,10 @@ window.fbAsyncInit = function() {
 	  version          : 'v3.2'
 	});
 	};
+
 login.addEventListener('click', () => {
 	FB.login(function(response) {
+		console.log(response);
 		if (response.status === 'connected') {
 			document.getElementById('status').innerHTML = 'We are connected.';
 			document.getElementById('login').style.visibility = 'hidden';
@@ -79,11 +81,6 @@ login.addEventListener('click', () => {
 	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
 		document.getElementById('yname').innerHTML = '<b>' + response.first_name + '</b>';
 	});
-	}
+});
 
-	function getInfo() {
-	FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-		document.getElementById('status').innerHTML = response.id;
-	});
-	});
 
