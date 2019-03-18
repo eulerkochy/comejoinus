@@ -58,7 +58,7 @@ setTimeout(nextSlide, 100);
 
 
 login.addEventListener('click', () => {
-	
+	console.log("I've been clicked")
 	FB.init({
 	  appId            : '2070778906293269',
 	  autoLogAppEvents : true,
