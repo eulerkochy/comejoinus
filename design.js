@@ -58,7 +58,7 @@ setTimeout(nextSlide, 100);
 
 
 login.addEventListener('click', () => {
-	window.fbAsyncInit = function() {
+	
 	FB.init({
 	  appId            : '2070778906293269',
 	  autoLogAppEvents : true,
@@ -67,7 +67,7 @@ login.addEventListener('click', () => {
 	});
 	FB.login();
 	console.log(FB);
-	};
+	
 });
 
 
